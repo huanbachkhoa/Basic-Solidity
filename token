@@ -1,0 +1,12 @@
+token// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract SimpleToken is ERC20 {
+    // Constructor để thiết lập token với tên và ký hiệu
+    constructor(string memory name, string memory symbol) ERC20(name, symbol) {
+        // Phát hành một số lượng token ban đầu cho người triển khai hợp đồng
+        _mint(msg.sender, 1000000 * 10 ** decimals());
+    }
+}
