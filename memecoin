@@ -1,0 +1,15 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+// Importing the ERC-20 interface and implementation from OpenZeppelin
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract MemeCoin is ERC20 {
+    // Constructor to set the name and symbol of the token
+    constructor() ERC20("MemeCoin", "LOL") {
+        // Mint an initial supply of 1,000,000 LOL tokens to the contract deployer
+        _mint(msg.sender, 1_000_000 * 10 ** decimals());
+    }
+
+    // Optionally, you can add additional funny features or functions here
+}
